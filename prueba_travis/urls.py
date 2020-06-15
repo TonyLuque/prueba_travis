@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from colombia import views as views_colombia
+from django.http import HttpResponse 
 from django.urls import path
 
 def hola(request):
