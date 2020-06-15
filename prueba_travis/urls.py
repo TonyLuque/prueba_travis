@@ -16,13 +16,13 @@ Including another URLconf
 from colombia import views as views_colombia
 from django.urls import path
 
-def jorge(request):
-    return HttpResponse("Hola jorge")
+def hola(request):
+    return HttpResponse('Hola jorge')
 
 urlpatterns = [
     path('colombia/', views_colombia.top_ten),
     path('colombia/department/', views_colombia.top_ten_cities),
     path('colombia/<str:city>', views_colombia.city),
-    path('jorge/', jorge)
+    path('jorge/', hola),
 
 ]
