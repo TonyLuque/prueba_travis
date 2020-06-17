@@ -10,6 +10,10 @@ script:
   
 git:
   depth: 3
+
+branches:
+  only:
+  - master
   
 notifications:
     email:
@@ -29,4 +33,3 @@ deploy:
     app: prueba-travis
     on:
       repo: TonyLuque/prueba_travis
-      branches: master
