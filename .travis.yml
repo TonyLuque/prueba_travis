@@ -29,3 +29,6 @@ deploy:
     app: prueba-travis
     on:
       repo: TonyLuque/prueba_travis
+      branches:
+        only:
+          -master
