@@ -16,14 +16,25 @@ Including another URLconf
 from colombia import views as views_colombia
 from django.http import HttpResponse 
 from django.urls import path
+import json
 
-def hola(request):
-    return HttpResponse('Prueba cambio rama a Develop')
+def hola(request,country):
+    data = {
+        "country_name": country,
+        "total_cases": "159,793",
+        "active_cases": "21,358",
+        "total_deaths": "19,080",
+        "new_deaths": "770",
+        "total_recovered": "119,355",
+        "new_cases": "4,930",
+        "serious_critical": "378"
+    }
+    return HttpResponse(json.dumps(data)
 
 urlpatterns = [
     path('colombia/', views_colombia.top_ten),
     path('colombia/department/', views_colombia.top_ten_cities),
     path('colombia/<str:city>', views_colombia.city),
-    path('jorge/', hola),
+    path('countries/<str:country>', hola),
 
 ]
