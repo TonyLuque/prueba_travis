@@ -29,12 +29,11 @@ def hola(request,country):
         "new_cases": "4,930",
         "serious_critical": "378"
     }
-    return HttpResponse(json.dumps(data)
+    return HttpResponse(json.dumps(data))
 
 urlpatterns = [
     path('colombia/', views_colombia.top_ten),
     path('colombia/department/', views_colombia.top_ten_cities),
     path('colombia/<str:city>', views_colombia.city),
     path('countries/<str:country>', hola),
-
 ]
