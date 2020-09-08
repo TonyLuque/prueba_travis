@@ -1,1 +1,1 @@
-web: gunicorn prueba_travis.wsgi
+web: gunicorn login.wsgi
